@@ -1,0 +1,38 @@
+export const machineProfiles: Record<string, string[]> = {
+  workstation: ['WORKSTATION'],
+  windows: ['WINDOWS-DC', 'WINDOWS-SERVER'],
+  linux: ['LINUX-SERVER', 'LINUX-APP'],
+  macos: ['MACOS-SERVER'],
+  android: ['ANDROID-MDM'],
+  ios: ['IOS-MDM'],
+  dns: ['DNS-PRIMARY', 'DNS-SECONDARY'],
+  firewall: ['FIREWALL-EDGE', 'FIREWALL-INTERNAL'],
+  vpn: ['VPN-SERVER'],
+  proxy: ['PROXY-WEB', 'PROXY-INTERNAL'],
+  cloud: ['CLOUD-CONTROLLER', 'CLOUD-WORKER'],
+  email: ['EMAIL-SERVER', 'EMAIL-RELAY'],
+  server: ['APP-SERVER', 'WEB-SERVER'],
+  database: ['DB-PRIMARY', 'DB-REPLICA'],
+  monitoring: ['MONITOR-SERVER', 'LOG-SERVER'],
+  security: ['IDS-SERVER', 'SIEM-SERVER'],
+};
+
+// Role to machine type mapping
+export const roleToMachineTypes: Record<string, string[]> = {
+  'Security Analyst': ['security', 'monitoring', 'firewall'],
+  'SOC Analyst': ['security', 'monitoring', 'firewall'],
+  'Threat Hunter': ['security', 'monitoring', 'firewall'],
+  'Sysadmin': ['windows', 'linux', 'dns', 'server'],
+  'IT Support Engineer': ['windows', 'linux', 'monitoring'],
+  'Helpdesk Technician': ['windows', 'macos'],
+  'DevOps Engineer': ['cloud', 'server', 'monitoring'],
+  'Software Engineer': ['server', 'database'],
+  'Database Administrator': ['database', 'monitoring'],
+  'Network Engineer': ['firewall', 'vpn', 'dns'],
+  'Security Engineer': ['security', 'firewall', 'vpn'],
+  'System Engineer': ['windows', 'linux', 'server', 'monitoring'],
+  'Cloud Engineer': ['cloud', 'server', 'monitoring'],
+  'Email Administrator': ['email', 'server'],
+  'Web Administrator': ['proxy', 'server'],
+  'Mobile Administrator': ['android', 'ios'],
+};
